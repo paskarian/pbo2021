@@ -1,24 +1,27 @@
 <?php
 
-include ('Mahasiswa.php');
+require_once ('Mahasiswa.php');
 
-$mahasiswa_male = new Mahasiswa();
-$mahasiswa_irvan = new Mahasiswa();
-$mahasiswa_fadil = new Mahasiswa();
-
-$mahasiswa_male->nim = "H1101191038";
-$mahasiswa_male->nama = "Maleakhiano Paskarian";
-$mahasiswa_male->tanggal_lahir = "09-04-2001";
-$mahasiswa_male->jenis_kelamin = "Pria";
-
-$mahasiswa_fadil->nim = "H1101191034";
-$mahasiswa_fadil->nama = "Muhammad Fadilah";
-$mahasiswa_fadil->tanggal_lahir = "03-01-2001";
-$mahasiswa_fadil->jenis_kelamin = "Pria";
-
-$mahasiswa_irvan->nim = "H1101191062";
-$mahasiswa_irvan->nama = "Muhammad Pramudia Irvan C";
-$mahasiswa_irvan->tanggal_lahir = "05-05-2001";
-$mahasiswa_irvan->jenis_kelamin = "Pria";
+$male = new Mahasiswa("H1101191038","Maleakhiano Paskarian","2001-04-09","Pria");
+$fadil = new Mahasiswa("H1101191034","Muhammad Fadilah","2001-01-03","Pria");
+$irvan = new Mahasiswa("H1101191062","Muhammad Pramudia Irvan C","2001-05-05","Pria");
 
 ?>
+<html>
+ <head>
+   <title>PHP Test</title>
+ </head>
+ <body>
+   <?php echo '<p>Hello World</p>'; ?>
+   <?php
+    $male->tampilkanNama();
+   ?><br>
+   <?php
+    $male->tampilkanUmur();
+   ?><br>
+   <?php
+    $male->tampilkanAngkatan();
+   ?><br>
+  
+ </body>
+</html>
