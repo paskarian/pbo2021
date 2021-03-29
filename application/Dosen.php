@@ -1,6 +1,6 @@
 <?php
-require_once('User.php');
-require_once('Pegawai.php');
+
+namespace application;
 
 class Dosen extends Pegawai{
     protected $nidn;
@@ -16,11 +16,11 @@ class Dosen extends Pegawai{
     }
 
     function mengajar(){
-
+        echo $this->nama." sedang mengajar<br>";
     }
 
     function meneliti(){
-
+        echo $this->nama. " sedang meneliti<br>";
     }
 
     public function getNip()

@@ -1,22 +1,29 @@
 <?php
-require_once('User.php');
-require_once('Mahasiswa.php');
 
-class MahasiswaBaru extends Mahasiswa{
-    protected $no_registrasi;
+namespace application;
 
-    function __construct($nim,$nama,$tgl,$jk,$no_reg){
+class Mahasiswa extends User{
+    protected $nim;
+    protected $nama;
+    protected $tanggal_lahir;
+    protected $jenis_kelamin;
+    
+    function __construct($nim,$nama,$tgl,$jk){
         $this->nim = $nim;
         $this->nama = $nama;
         $this->tanggal_lahir = $tgl;
         $this->jenis_kelamin = $jk;
-        $this->no_registrasi = $no_reg;
     }
-
-    function bayarGedung(){
-
+    
+    public function tampilkanAngkatan(){
+        $akt = substr($this->nim,5,2);
+        echo $this->nama. ' merupakan angkatan tahun '. $akt . "<br>";
     }
-
+    
+    public function tampilkanUmur(){
+        echo date_diff(date_create($this->tanggal_lahir), date_create('today'))->y  ;
+    }
+    
     public function getNim()
     {
         return $this->nim;
@@ -35,11 +42,6 @@ class MahasiswaBaru extends Mahasiswa{
     public function getJenisKelamin()
     {
         return $this->jenis_kelamin;
-    }
-
-    public function getNoReg()
-    {
-        return $this->no_registrasi;
     }
 
     public function setNim($nim)
@@ -61,11 +63,6 @@ class MahasiswaBaru extends Mahasiswa{
     {
         $this->jenis_kelamin = $jk;
     }
-
-    public function setNoReg($no_reg)
-    {
-        $this->no_registrasi = $no_reg;
-    }
 }
-
+   
 ?>
