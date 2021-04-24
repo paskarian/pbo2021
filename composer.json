@@ -1,0 +1,16 @@
+{
+    "name": "malea/pbo2021",
+    "description": "Praktikum PBO",
+    "authors": [
+        {
+            "name": "Maleakhiano",
+            "email": "paskaaae999@student.untan.ac.id"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "App\\": "application"
+        }
+    }
+}

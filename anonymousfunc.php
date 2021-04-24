@@ -9,7 +9,7 @@ $jml = function ($a, $b) {
     return $c;
 };
 
-function perkalian($x, $y = 12 /*nilai default*/)
+function perkalian($x, $y = 12)
 {
     $z = $x * $y;
     return $z;
