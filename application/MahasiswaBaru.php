@@ -66,6 +66,9 @@ class MahasiswaBaru extends Mahasiswa{
     {
         $this->no_registrasi = $no_reg;
     }
-}
 
-?>
+    // public function tuntaskan() //error karena tuntaskan merupakan function di class Mahasiswa adalah final
+    // {
+    //     echo "bawa perbaikan";
+    // }
+}

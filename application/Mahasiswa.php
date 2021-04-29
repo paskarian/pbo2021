@@ -7,6 +7,11 @@ class Mahasiswa extends User{
     protected $nama;
     protected $tanggal_lahir;
     protected $jenis_kelamin;
+    const AKTIF = 1;
+    const NON_AKTIF = 0;
+    public static $status = self::AKTIF;
+    public static $sks;
+    public static $bobot;
     
     function __construct($nim,$nama,$tgl,$jk){
         $this->nim = $nim;
@@ -63,6 +68,27 @@ class Mahasiswa extends User{
     {
         $this->jenis_kelamin = $jk;
     }
+    
+    public static function bergerak()
+    {
+        echo "agen solusi, bukan agen perubahan <br/>";
+    }
+
+    final public function tuntaskan()
+    {
+        self::bergerak();
+        echo "memperbaiki menjadi lebih baik <br/>";
+    }
+
+    // buat fungsi dengan nama hitungsks yang tipenya adalah static
+    /**
+     * parameter dari fungsi tersebut adalah $sks dan $bobot
+     */
+
+    public static function hitungsks($sks, $bobot)
+    {
+        self::$sks = $sks;
+        self::$bobot = $bobot;
+        return $sks*$bobot;
+    }
 }
-   
-?>
