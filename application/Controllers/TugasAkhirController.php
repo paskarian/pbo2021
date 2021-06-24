@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-class TugasAkhirController
+class TugasAkhirController extends Controller
 {
     public function daftarkanTA()
     {
